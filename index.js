@@ -20,7 +20,9 @@ app.get('/reverse/:TEXT',function(req,res){
   res.send(yolo);
 })
 
-
+app.get ('/randompic',function(req,res){
+  res.redirect('http://loremflickr.com/320/240');
+})
 
 app.get('/', function(request, response) {
   response.render('pages/index');
