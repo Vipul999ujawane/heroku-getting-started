@@ -10,6 +10,13 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/reverse/:TEXT',function(req,res){
+  var n= req.params.TEXT.length;
+  var yolo=""
+  var i=0;
+  for (i=n-1; i>=0;i--)
+  {
+    yolo+=req.params.TEXT[i];
+  }
   res.send(req.params.TEXT);
 })
 
