@@ -9,6 +9,10 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+app.get('/reverse/:TEXT',function(req,res){
+  res.send(req.params.TEXT);
+})
+
 app.get('/', function(request, response) {
   response.render('pages/index');
 });
