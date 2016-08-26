@@ -17,7 +17,7 @@ app.get('/reverse/:TEXT',function(req,res){
   {
     yolo+=req.params.TEXT[i];
   }
-  res.send(req.params.TEXT);
+  res.send(yolo);
 })
 
 app.get('/', function(request, response) {
