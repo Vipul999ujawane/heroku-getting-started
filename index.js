@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 
 app.get('/reverse/:TEXT',function(req,res){
   
-  res.send(reverse(req.params.TEXT));
+  res.send(req.params.TEXT.split('').reverse().join(''));
 })
 
 
