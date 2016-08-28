@@ -21,7 +21,6 @@ app.get('/reverse/:TEXT',function(req,res){
 })
 
 app.get ('/randompic',function(req,res){
-  res.redirect('http://loremflickr.com/320/240');
   request('http://loremflickr.com/320/240', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     res.send(body); // Show the HTML for the Google homepage. 
