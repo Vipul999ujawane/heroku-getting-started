@@ -23,6 +23,11 @@ app.get('/reverse/:TEXT',function(req,res){
 app.get ('/randompic',function(req,res){
   res.redirect('http://loremflickr.com/320/240');
 })
+
+app.get('/randomarticle',function(req,res){
+  res.send('http://en.wikipedia.org/wiki/Special:Random',301);
+})
+
 app.get ('*',function(req,res){
   res.send(404);
 })
