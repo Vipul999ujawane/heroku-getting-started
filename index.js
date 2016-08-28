@@ -25,7 +25,7 @@ app.get ('/randompic',function(req,res){
 })
 
 app.get('/randomarticle',function(req,res){
-  res.send('http://en.wikipedia.org/wiki/Special:Random',301);
+  res.redirect('http://en.wikipedia.org/wiki/Special:Random',301);
 })
 
 app.get ('*',function(req,res){
