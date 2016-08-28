@@ -34,6 +34,11 @@ app.get ('/multiply',function(req,res){
     }
     result*=t1;
   }
+  final=[]
+  for (var i in req.query)
+  {
+    final.push(req.query[i]);
+  }
   res.json ({"error":err,"inputs":req.query,"result":result})
 })
 
