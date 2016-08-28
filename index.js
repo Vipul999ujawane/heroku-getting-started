@@ -27,12 +27,14 @@ app.get ('/multiply',function(req,res){
     if (Number.isNaN(Number(t1))==true)
     {
       err="NaN";
+      result=null;
       break;
     }
     count++;
     if(count>20)
     {
       err="Too much";
+      result=null;
     }
     result*=t1;
     final.push(t1);
