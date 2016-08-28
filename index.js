@@ -29,11 +29,34 @@ app.get('/randomarticle',function(req,res){
 })
  
 app.get ('/multiply',function(req,res){
-  var m1= req.param('m1');
-  var m2=req.param('m2');
-  var m3=req.param('m3');
-  result=m1*m2*m3;
-  res.json ({"error":"null","inputs":[m1,m2,m3],"result":result})
+  var array=[];
+  array.push(req.param('m1'));
+  array.push(req.param('m2'));
+  array.push(req.param('m3'));
+  array.push(req.param('m4'));
+  array.push(req.param('m5'));
+  array.push(req.param('m6'));
+  array.push(req.param('m7'));
+  array.push(req.param('m8'));
+  array.push(req.param('m9'));
+  array.push(req.param('m10'));
+  array.push(req.param('m11'));
+  array.push(req.param('m12'));
+  array.push(req.param('m13'));
+  array.push(req.param('m14'));
+  array.push(req.param('m15'));
+  array.push(req.param('m16'));
+  array.push(req.param('m17'));
+  array.push(req.param('m18'));
+  array.push(req.param('m19'));
+  array.push(req.param('m20'));
+  var i=0;
+  var result=1;
+  for (i=0; i<array.length; i++)
+  {
+    result*=array[i];
+  }
+  res.json ({"error":"null","inputs":array,"result":result})
 })
 
 app.get('/', function(request, response) {
