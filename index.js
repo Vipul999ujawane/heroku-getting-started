@@ -20,7 +20,7 @@ app.get('/randomarticle',function(req,res){
 })
  
 app.get ('/multiply',function(req,res){
-  var err=null,result=1;
+  var err="null",result=1;
   for (var i in req.query){
     var t1= req.query[i];
     if (t1==NaN)
