@@ -54,7 +54,10 @@ app.get ('/multiply',function(req,res){
   var result=1;
   for (i=0; i<array.length; i++)
   {
-    result*=array[i];
+    if (array[i]!=null)
+    {
+      result*=array[i];
+    }
   }
   res.json ({"error":"null","inputs":array,"result":result})
 })
