@@ -24,7 +24,7 @@ app.get ('/multiply',function(req,res){
   var final=[]
   for (var i in req.query){
     var t1= req.query[i];
-    if (isNan(Number(t1))==true)
+    if (Number.isNaN(Number(t1))==true)
     {
       err="NaN";
       break;
