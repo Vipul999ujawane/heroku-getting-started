@@ -21,6 +21,7 @@ app.get('/randomarticle',function(req,res){
  
 app.get ('/multiply',function(req,res){
   var err=null,result=1,count=1;
+  var final=[]
   for (var i in req.query){
     var t1= req.query[i];
     if (isNan(Number(t1))==true)
@@ -34,8 +35,8 @@ app.get ('/multiply',function(req,res){
       err="Too much";
     }
     result*=t1;
+    final.push(t1);
   }
-  final=[]
   for (var i in req.query)
   {
     final.push(req.query[i]);
