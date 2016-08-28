@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+var request =require('request');
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -22,6 +22,12 @@ app.get('/reverse/:TEXT',function(req,res){
 
 app.get ('/randompic',function(req,res){
   res.redirect('http://loremflickr.com/320/240');
+  request('http://loremflickr.com/320/240', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    res.send(body); // Show the HTML for the Google homepage. 
+  }
+})
+  
 })
 
 app.get('/randomarticle',function(req,res){
