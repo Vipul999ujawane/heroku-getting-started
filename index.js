@@ -9,14 +9,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/reverse/:TEXT',function(req,res){
-  var n= req.params.TEXT.length;
-  var yolo=""
-  var i=0;
-  for (i=n-1; i>=0;i--)
-  {
-    yolo+=req.params.TEXT[i];
-  }
-  res.send(yolo);
+  
+  res.send(req.params.TEXT.reverse);
 })
 
 
@@ -49,6 +43,7 @@ app.get ('/multiply',function(req,res){
   array.push(req.param('m20'));
   var i=0;
   var result=1;
+  var arr2=[]
   for (i=0; i<array.length; i++)
   {
     if (array[i]!=null)
@@ -56,7 +51,14 @@ app.get ('/multiply',function(req,res){
       result*=array[i];
     }
   }
-  res.json ({"error":"null","inputs":array,"result":result})
+  for (i=0)
+  {
+    if (array[i]!=null)
+    {
+      arr2.push(array[i]);
+    }
+  }
+  res.json ({"error":"null","inputs":arr2,"result":result})
 })
 
 app.get('/', function(request, response) {
