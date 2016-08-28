@@ -39,7 +39,7 @@ app.get ('/multiply',function(req,res){
   {
     final.push(req.query[i]);
   }
-  res.json ({"error":err,"inputs":req.query,"result":result})
+  res.json ({"error":err,"inputs":final,"result":result})
 })
 
 app.get('/', function(request, response) {
