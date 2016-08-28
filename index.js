@@ -28,6 +28,7 @@ app.get ('/multiply',function(req,res){
     {
       err="NaN";
       result=null;
+      final=[];
       break;
     }
     count++;
@@ -35,6 +36,7 @@ app.get ('/multiply',function(req,res){
     {
       err="Too much";
       result=null;
+      final=[];
     }
     result*=t1;
     final.push(t1);
