@@ -23,7 +23,7 @@ app.get ('/multiply',function(req,res){
   var err=null,result=1;
   for (var i in req.query){
     var t1= req.query[i];
-    if (Number.isNan(Number(t1)))
+    if (isNan(Number(t1)))
     {
       err="NaN";
       break;
