@@ -27,14 +27,24 @@ app.get ('/randompic',function(req,res){
 app.get('/randomarticle',function(req,res){
   res.redirect('http://en.wikipedia.org/wiki/Special:Random',301);
 })
+ 
+app.get ('/multiply',function(req,res){
+  var m1= req.param('m1');
+  var m2=req.param('m2');
+  var m3=req.param('m3');
+  result=m1*m2*m3;
+  res.json ({"error":"null","inputs":[m1,m2,m3],"result":result})
+})
+
+app.get('/', function(request, response) {
+  response.render('pages/index');
+})
 
 app.get ('*',function(req,res){
   res.send(404);
 })
 
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
+;
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
