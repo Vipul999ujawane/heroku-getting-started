@@ -28,7 +28,7 @@ app.get ('/multiply',function(req,res){
       err="NaN";
       break;
     }
-    if(i>20)
+    if(i.slice(1)>20)
     {
       err="Too much";
     }
