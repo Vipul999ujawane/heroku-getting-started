@@ -20,45 +20,21 @@ app.get('/randomarticle',function(req,res){
 })
  
 app.get ('/multiply',function(req,res){
-  var array=[];
-  array.push(req.param('m1'));
-  array.push(req.param('m2'));
-  array.push(req.param('m3'));
-  array.push(req.param('m4'));
-  array.push(req.param('m5'));
-  array.push(req.param('m6'));
-  array.push(req.param('m7'));
-  array.push(req.param('m8'));
-  array.push(req.param('m9'));
-  array.push(req.param('m10'));
-  array.push(req.param('m11'));
-  array.push(req.param('m12'));
-  array.push(req.param('m13'));
-  array.push(req.param('m14'));
-  array.push(req.param('m15'));
-  array.push(req.param('m16'));
-  array.push(req.param('m17'));
-  array.push(req.param('m18'));
-  array.push(req.param('m19'));
-  array.push(req.param('m20'));
-  var i=0;
-  var result=1;
-  var arr2=[]
-  for (i=0; i<array.length; i++)
-  {
-    if (array[i]!=null)
+  var err,result=1;
+  for (var i in req.query){
+    var t1= req.query[i];
+    if (t1==NaN)
     {
-      result*=array[i];
+      err="NaN";
+      break;
     }
-  }
-  for (i=0; i<array.length;i++)
-  {
-    if (array[i]!=null)
+    if(i>20)
     {
-      arr2.push(array[i]);
+      err="Too much";
     }
+    result*=t1;
   }
-  res.json ({"error":"null","inputs":arr2,"result":result})
+  res.json ({"error":err,"inputs":req.query,"result":result})
 })
 
 app.get('/', function(request, response) {
