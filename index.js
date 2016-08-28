@@ -51,7 +51,7 @@ app.get ('/multiply',function(req,res){
       result*=array[i];
     }
   }
-  for (i=0)
+  for (i=0; i<array.length;i++)
   {
     if (array[i]!=null)
     {
